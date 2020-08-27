@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    double num1, num2;
+    Scanner s1 = new Scanner(System.in);
+    boolean loop = true;
+    //Welcome
+    System.out.println("Welcome to Calculator");
+    while(loop){
+      //Number input
+      System.out.println("Please enter a first number");
+      num1 = s1.nextDouble();
+    
+      //Operator
+      System.out.println("Please enter Operator");
+      char operator = s1.next().charAt(0);
+      //Nuber input 2
+      System.out.println("Please enter a second number");
+      num2 = s1.nextDouble();
+
+      //Operations
+      // s1.close();
+    
+      double result;
+
+      switch(operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          result = num1 / num2;
+          break;
+      
+        default:
+          System.out.println("You have enter wrong operator");
+          return;
+      } 
+
+      //Operator Function Output
+      System.out.println("Your function is: " + num1 + operator + num2);
+      //Operator Output
+      System.out.println("Your result " + result);
+
+      //Reapeter
+      System.out.println("Would you like to use another function? (y/n)");
+      loop = (s1.next().charAt(0) == 'y');
+    }
+  }
+}
